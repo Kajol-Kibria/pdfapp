@@ -15,7 +15,13 @@
 }
 
 body {
-  color: var(--foreground);
+  color: black;
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.bghero{
+  background: rgb(139,72,253);
+  background: linear-gradient(90deg, rgba(139,72,253,0.025647759103641476) 0%, rgba(139,72,253,0.06766456582633051) 43%, rgba(139,72,253,0.08167016806722693) 66%, rgba(139,72,253,0.014443277310924318) 100%);
+  
 }
