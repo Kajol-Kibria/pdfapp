@@ -34,7 +34,7 @@ export default function Hero() {
       to: img1 ,
       title:'PDF to Image',
       des:'A too to convert your PDF to image.',
-      path:'/imagetopdf'
+      path:'/pdftoimage'
     },
     { 
       id: 3,
@@ -42,7 +42,7 @@ export default function Hero() {
       to: img2,
       title:'PPT to PDF',
       des:'A too to convert your PPT to PDF.',
-      path:'/imagetopdf'
+      path:'/ppttopdf'
     },
     { 
       id: 4,
@@ -50,7 +50,7 @@ export default function Hero() {
       to: img3,
       title:'PDF to PPT',
       des:'A too to convert your PDF to PPT.',
-      path:'/imagetopdf'
+      path:'/pdftoppt'
     },
     { 
       id: 5,
@@ -58,7 +58,7 @@ export default function Hero() {
       to: img2,
       title:'Word to PDF',
       des:'A too to convert your word to PDF.',
-      path:'/imagetopdf'
+      path:'/wordtopdf'
     },
     { 
       id: 6,
@@ -66,7 +66,7 @@ export default function Hero() {
       to: img4,
       title:'PDF to Word',
       des:'A too to convert your PDF to word.',
-      path:'/imagetopdf'
+      path:'/pdftoword'
     },
     { 
       id: 7,
@@ -74,47 +74,47 @@ export default function Hero() {
       to: img2,
       title:'Excel to PDF',
       des:'A too to convert your Excel to PDF.',
-      path:'/imagetopdf'
+      path:'/exceltopdf'
     },
     { 
       id: 8,
       from: img2,
       to: img5,
-      title:'Image to PDF',
+      title:'PDF to Excel',
       des:'A too to convert your PDF to Excel.',
-      path:'/imagetopdf'
+      path:'/pdftoexcel'
     },
     { 
       id: 9,
-      from: null,
+      from: img,
       to: img9,
       title:'Marge PDF',
       des:'A too to marge your PDF.',
-      path:'/imagetopdf'
+      path:'/margepdf'
     },
     { 
       id: 10,
-      from: null,
+      from: img,
       to: img10,
-      title:'Image to PDF',
-      des:'A too to convert your images to pdf.',
-      path:'/imagetopdf'
+      title:'Compress PDF',
+      des:'A too to Compress your PDF.',
+      path:'/compresspdf'
     },
     { 
       id: 11,
-      from: null,
+      from: img,
       to: img11,
-      title:'Image to PDF',
-      des:'A too to convert your images to pdf.',
-      path:'/imagetopdf'
+      title:'Summarize PDF',
+      des:'A too to summarize your PDF.',
+      path:'/summarizepdf'
     },
     { 
       id: 12,
       from: img12,
       to: img2,
-      title:'Image to PDF',
-      des:'A too to convert your images to pdf.',
-      path:'/imagetopdf'
+      title:'URL to PDF',
+      des:'A too to convert your URL to PDF.',
+      path:'/urltopdf'
     },
   ]
 
@@ -140,20 +140,20 @@ export default function Hero() {
         <h1 className='text-4xl font-bold'>Most Popular <span className='text-[#8b48fd]'>PDF Tools</span></h1>
         <p className='w-1/2 mx-auto py-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nulla velit labore ea. Deserunt, mollitia? Laboriosam ullam qui accusantium obcaecati!</p>
         
-        <div className='grid grid-cols-4 gap-10 my-7'>
+        <div className='grid grid-cols-4 gap-8 my-7'>
           {array.map((data)=>{
             return(
-              <div className={` bg-white/40  border-gray-600/30 border shadow hover:scale-105 hover:shadow-lg transition-all duration-300 rounded-lg px-4 py-5`} key={data.id}>
+              <div className={` bg-white/40  border-gray-600/30 border shadow hover:scale-105 hover:shadow-lg transition-all duration-300 rounded-lg px-4 h-44 content-center`} key={data.id}>
                 <Link href={data.path}>
                 <div className='flex items-center justify-center gap-4 py-3'>
-                  <Image className={`${data.from?'block':'hidden'}`} src={data.from} width={35} height={36} alt='logo'/>
-                  <PiArrowArcRight className={`${data.from?'block':'hidden'}`} size={30}/>
+                  <Image className={`${data.from !==img?'block':'hidden'}`} src={data.from} width={35} height={36} alt='logo'/>
+                  <PiArrowArcRight className={`${data.from !==img?'block':'hidden'}`} size={30}/>
                   <Image src={data.to} width={35} height={36} alt='logo'/>
                 </div>
                   <p className='text-lg font-semibold py-1'>{data.title}</p>
-                  <div className='flex items-center gap-2 text-left'>
+                  <div className=''>
                   <p className='text-sm'>{data.des}</p>
-                  <IoIosArrowForward size={20}/>
+                  
                   </div>
                 </Link>
               </div>
